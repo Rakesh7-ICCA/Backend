@@ -12,7 +12,7 @@ app.post('/user',(req, res)=>{
 })
 
 app.get('/', (req, res) =>{
-    res.render('index')
+    res.send('index')
 })
 
 app.listen(3000)

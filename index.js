@@ -11,6 +11,8 @@ app.use(bp.json()); // for JSON data
 
 app.post('/user',(req, res)=>{
     console.log(req.body);
+    console.log(req.ip)
+    res.send('Inserted')
 })
 
 app.get('/', (req, res) =>{

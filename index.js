@@ -2,7 +2,9 @@ const ser = require('express')
 const app = ser();
 const sql = require('mssql')
 const bp = require('body-parser')
-app.set('view engine', 'ejs')
+
+app.set("views", __dirname + "/views");
+app.set("view engine", "ejs");
 
 app.use(bp.urlencoded({ extended: true })); // for x-www-form-urlencoded data
 app.use(bp.json()); // for JSON data
@@ -12,7 +14,7 @@ app.post('/user',(req, res)=>{
 })
 
 app.get('/', (req, res) =>{
-    res.send('index')
+    res.render('index')
 })
 
 app.listen(3000)
